@@ -7,12 +7,16 @@ app = Flask(__name__, static_folder="static")
 
 @app.route('/')
 def index():
- return render_template('rainbow.html', color="red", txt="Welcome to Joseph's Rainbow Project")
+ return render_template('home.html', txt="Welcome to Joseph's Rainbow Project")
+
+@app.route('/rainbow')
+def rainbow():
+ return render_template('rainbow.html', txt="Welcome to Joseph's Rainbow Project", colors=["red","orange","yellow","green","blue","indigo","violet"])
 
 @app.route('/red')
 def red():
  return render_template('rainbow_template.html', color="red")
-s
+
 @app.route('/orange')
 def orange():
  return render_template('rainbow_template.html', color="orange")
@@ -27,7 +31,7 @@ def green():
 
 @app.route('/blue')
 def blue():
- return render_template('rainbrainbow_templateow.html', color="blue")
+ return render_template('rainbow_template.html', color="blue")
 
 @app.route('/indigo')
 def indigo():
